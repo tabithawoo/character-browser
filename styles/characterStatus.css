@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.alive {
+    @apply font-bold text-fuchsia-600
+}
+
+.dead {
+    @apply font-bold text-red-800
+}
+
+.unknown {
+    @apply italic
+}
