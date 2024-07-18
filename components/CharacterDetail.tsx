@@ -3,12 +3,11 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { gql, useQuery } from "@apollo/client";
-import Button from "@/components/Button";
 import ErrorMessage from "@/components/ErrorMessage";
 import LoadingMessage from "@/components/LoadingMessage";
 import Status from "@/components/Status";
 
-const GET_CHARACTER = gql`
+export const GET_CHARACTER = gql`
     query GetCharacter($id: ID!) {
         character(id: $id) {
             id
@@ -51,7 +50,7 @@ const CharacterDetail = ({id}:{id:number}) => {
             </div>
             <div className="text-center col-span-5 sm:col-span-3">
                 <div className="rounded-lg bg-gray-50 inline-block p-1 sm:p-3 text-center sm:text-left">
-                    <Image src={character.image} className="mx-auto sm:mx-0 mb-2" width={300} height={300} alt={`${character.name} avatar`} />
+                    <Image src={character.image} priority className="mx-auto sm:mx-0 mb-2" width={300} height={300} alt={`${character.name} avatar`} />
                     <h2 className="text-2xl font-bold">{character.name}</h2>
                     <h4 className="text-l">Status: <Status status={character.status} /></h4>
                     <h4 className="text-l">Species: {character.species}</h4>

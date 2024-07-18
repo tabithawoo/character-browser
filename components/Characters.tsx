@@ -8,7 +8,7 @@ import ErrorMessage from "@/components/ErrorMessage";
 import LoadingMessage from "@/components/LoadingMessage";
 import SearchBar from "@/components/SearchBar";
 
-const GET_CHARACTERS = gql`
+export const GET_CHARACTERS = gql`
     query GetCharacters($page: Int!, $name: String) {
         characters(page: $page, filter: { name: $name}) {
           	info {
@@ -25,13 +25,14 @@ const GET_CHARACTERS = gql`
 
 const Characters = () => {
 	const searchParams = useSearchParams();
-	const searchName = searchParams.get("searchName") || "";
+	const searchName = searchParams?.get("searchName") || "";
     const { loading, error, data, fetchMore } = useQuery(GET_CHARACTERS, {
       	variables: {
 			page: 1,
 			name: searchName
 		}
     });
+
     const queryInfo = data?.characters?.info;
     const characters:Array<SearchCharacter> = data?.characters?.results || [];
 
@@ -78,7 +79,7 @@ const Characters = () => {
         {queryInfo.next &&
 			<div className="mt-5 text-center">
 				<Button onClick={handleLoadNext} text="Load More" variation="outlined" />
-			</div>            
+			</div>
         }
     </>)
 }

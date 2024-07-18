@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Rick & Morty Character Browser
 
-## Getting Started
+This is a case study build with Next.js 14, TypeScript, GraphQL and Tailwind CSS.
 
-First, run the development server:
+Data is supplied by [The Rick and Morty API](https://rickandmortyapi.com).
+
+## Features
+
+- Home page with list of characters
+- A search bar for finding characters by name
+- Character detail pages with dynamic routing
+
+## Installation
+
+Follow these steps to run the project on your own development environment:
+
+1. Clone the respository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/tabithawoo/character-browser.git
+cd character-browser
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+If you are using `npm`:
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+If you are using `yarn`:
+```bash
+yarn install
+```
 
-## Learn More
+3. Run the project
 
-To learn more about Next.js, take a look at the following resources:
+If you are using `npm`:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If you are using `yarn`:
+```bash
+yarn dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application running.
 
-## Deploy on Vercel
+## Running tests
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project uses Jest and React Testing Library for testing components.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Once you have installed all necessary dependencies, use the following command to run the tests:
+
+If you are using `npm`:
+```bash
+npm test
+```
+
+If you are using `yarn`:
+```bash
+yarn test
+```
